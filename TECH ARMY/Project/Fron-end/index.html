@@ -1,0 +1,69 @@
+/*Author:-
+	     Team name:-TECH ARMY
+	     Team members:-Hetvi,Aman,Adib,Srushti
+	     Name:-Aman,Adib,hetvi
+	  Objective:-To develop a customizable, intuitive classroom management tools for teachers.
+*/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable Classroom Management Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Classroom Management Tool</h1>
+        <div class="dashboard">
+            <h2>Dashboard</h2>
+            <button onclick="toggleSection('studentProfileSection')">Student Profiles</button>
+            <button onclick="toggleSection('attendanceSection')">Attendance Tracking</button>
+            <button onclick="toggleSection('homeworkSection')">Homework Management</button>
+            <button onclick="toggleSection('announcementSection')">Announcements</button>
+            
+        </div>
+
+        <div id="attendanceSection" class="section hidden" >
+            <h2>Track Attendance</h2>
+            <input type="text" id="attendanceId" placeholder="Student ID" >
+            
+            <select id="attendanceStatus">
+                <option value="true">Present</option>
+                <option value="false">Absent</option>
+            </select>
+            <br>
+            <button onclick="trackAttendance()">Track Attendance</button>
+            <div id="attendanceOutput"></div>
+        </div>
+
+        <div id="homeworkSection" class="section hidden">
+            <h2>Assign Homework</h2>
+            <input type="text" id="homeworkTitle" placeholder="Homework Title">
+            <textarea id="homeworkDescription" placeholder="Homework Description"></textarea>
+            <br>
+            <button onclick="assignHomework()">Assign Homework</button>
+            <div id="homeworkOutput"></div>
+        </div>
+
+        <div id="announcementSection" class="section hidden">
+            <h2>Post Announcement</h2>
+            <textarea id="announcementMessage" placeholder="Announcement Message"></textarea>
+            <br>
+            <button onclick="postAnnouncement()">Post Announcement</button>
+            <div id="announcementOutput"></div>
+        </div>
+
+        <div id="studentProfileSection" class="section hidden">
+            <h2>Student Profiles</h2>
+            <input type="text" id="studentName" placeholder="Student Name">
+            <input type="text" id="studentId" placeholder="Student ID">
+            <br>
+            <button onclick="addStudent()">Add Student</button>
+            <div id="studentOutput"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
